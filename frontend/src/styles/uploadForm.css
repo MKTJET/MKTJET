@@ -1,0 +1,25 @@
+.upload-form-container {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.upload-form label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.upload-form input[type="text"],
+.upload-form input[type="number"] {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.error-message {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.preview-container {
+  margin-top: 1rem;
+}
