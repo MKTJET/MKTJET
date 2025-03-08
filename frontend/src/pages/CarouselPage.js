@@ -14,6 +14,14 @@ function CarouselPage() {
   // Ref para o container do carrossel que será posto em full screen
   const containerRef = useRef(null);
 
+  // Verifica autenticação
+  useEffect(() => {
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (!loggedInUser) {
+      navigate('/login');
+    }
+  }, [navigate]);
+
   // 1. Carregar mídias do localStorage e escutar atualizações via BroadcastChannel
   useEffect(() => {
     const bc = new BroadcastChannel(BROADCAST_CHANNEL);
@@ -85,7 +93,7 @@ function CarouselPage() {
       <div className="carousel-fullscreen-container" ref={containerRef}>
         <h2>Carrossel</h2>
         <p>Nenhuma mídia foi adicionada. Por favor, adicione mídias na página de upload.</p>
-        <button onClick={() => navigate('/')}>Voltar</button>
+        <button onClick={() => navigate('/upload')}>Voltar</button>
       </div>
     );
   }
@@ -123,7 +131,7 @@ function CarouselPage() {
       {!isFullscreen && (
         <div className="carousel-controls">
           <p>Duração: {currentItem.duration} segundos</p>
-          <button onClick={() => navigate('/')}>Voltar para Upload</button>
+          <button onClick={() => navigate('/upload')}>Voltar para Upload</button>
           <button onClick={toggleFullscreen}>Full Screen</button>
         </div>
       )}
