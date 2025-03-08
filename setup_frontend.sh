@@ -62,7 +62,7 @@ Este projeto React inclui:
 
 ## Scripts
 
-- **npm start**: inicia o servidor de desenvolvimento (http://localhost:3000).
+- **npm start**: inicia o servidor de desenvolvimento (http://localost:3000).
 - **npm run build**: gera o build de produção em /build.
 
 Estrutura gerada automaticamente por setup_frontend.sh.
